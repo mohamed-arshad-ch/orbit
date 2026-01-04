@@ -1,65 +1,206 @@
+"use client";
+
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Link from "next/link";
+import { jobs } from "@/data/jobs";
+import { tours } from "@/data/tours";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen">
+      <Header />
+      <Hero />
+
+      {/* Featured Jobs Section */}
+      <section id="jobs" className="py-20 bg-slate-900/30 border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="flex justify-between items-end mb-10">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Foreign Vacancies</h2>
+              <p className="text-slate-400">Discover premium opportunities across the globe.</p>
+            </div>
+            <button className="hidden md:block text-sky-400 font-semibold hover:text-sky-300 transition-colors">View All Jobs →</button>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {jobs.map((job, index) => (
+              <Link href={`/jobs/${job.id}`} key={job.id} className="block group">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                  className="h-full p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-sky-500/50 hover:bg-white/10 transition-colors cursor-pointer backdrop-blur-sm relative overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-sky-400 text-xl">↗</span>
+                  </div>
+                  <div className="flex justify-between items-start mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-sky-500/20 flex items-center justify-center text-2xl border border-sky-500/30 shadow-lg shadow-sky-500/10">
+                      {job.countryFlag}
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-300 border border-white/10 group-hover:border-sky-500/30 transition-colors">
+                      {job.type}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">{job.title}</h3>
+                  <p className="text-slate-400 text-sm mb-6">{job.company} • {job.location}</p>
+                  <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
+                    <span className="text-sky-400 font-bold">{job.salary}<span className="text-slate-500 text-sm font-normal">/mo</span></span>
+                    <span className="text-sm font-semibold text-white group-hover:translate-x-1 transition-transform">Details →</span>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center md:hidden">
+            <button className="text-sky-400 font-semibold hover:text-sky-300 transition-colors">View All Jobs →</button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Tour Packages Section */}
+      <section id="tours" className="py-20 relative overflow-hidden">
+        {/* Decorative background blob */}
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-sky-900/20 rounded-full blur-[100px] -z-10 translate-y-1/2 opacity-50" />
+
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Exclusive Tour Packages</h2>
+            <p className="text-slate-400">Handpicked destinations for your next unrestricted adventure. Experience luxury and culture like never before.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {tours.map((tour, index) => (
+              <Link href={`/tours/${tour.id}`} key={tour.id} className="block group">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
+                  whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+                  className="h-full rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-sky-500/50 transition-colors duration-300 hover:shadow-2xl hover:shadow-sky-500/20 flex flex-col"
+                >
+                  <div className="h-64 relative overflow-hidden">
+                    <Image
+                      src={tour.image}
+                      alt={tour.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className="w-8 h-8 flex items-center justify-center rounded-full bg-black/30 backdrop-blur-md text-white border border-white/20">↗</span>
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4 z-10">
+                      <span className="px-3 py-1 bg-sky-500 text-black text-xs font-bold rounded-full uppercase tracking-wider mb-2 inline-block shadow-lg">
+                        {tour.duration}
+                      </span>
+                      <h3 className="text-2xl font-bold text-white drop-shadow-md">{tour.title}</h3>
+                    </div>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex gap-4 mb-6 text-sm text-slate-400">
+                      <span className="flex items-center gap-1">✈️ Flight</span>
+                      <span className="flex items-center gap-1">🏨 Hotel</span>
+                      <span className="flex items-center gap-1">🍽️ Meals</span>
+                    </div>
+                    <div className="mt-auto flex justify-between items-center pt-6 border-t border-white/5">
+                      <div>
+                        <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">Starting from</p>
+                        <span className="text-xl font-bold text-sky-400">{tour.price}</span>
+                      </div>
+                      <span className="px-5 py-2 rounded-xl bg-white text-black text-sm font-bold group-hover:bg-sky-500 transition-colors">
+                        View Deal
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-slate-900/30 border-y border-white/5 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-2 md:order-1 relative"
+            >
+              <div className="absolute -top-10 -left-10 w-[300px] h-[300px] bg-sky-500/20 rounded-full blur-[80px] -z-10" />
+              <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative h-[500px]">
+                <Image
+                  src="/about_team_1767532958040.png"
+                  alt="Our Team"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white font-medium italic">"Connecting talent with opportunity, worldwide."</p>
+                </div>
+              </div>
+            </motion.div>
+            <div className="order-1 md:order-2">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl font-bold text-white mb-6"
+              >
+                Why Choose Orbit Consultancy?
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-slate-400 mb-6 leading-relaxed"
+              >
+                We don't just find jobs or book tours; we craft life-changing experiences. With a network spanning across 20+ countries and partnerships with top-tier companies, we ensure your journey is safe, rewarding, and seamless.
+              </motion.p>
+              <ul className="space-y-4 mb-8">
+                {['Government Approved', 'Transparent Processing', '24/7 Support', 'Best Price Guarantee'].map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * i + 0.3 }}
+                    className="flex items-center gap-3 text-white"
+                  >
+                    <span className="w-5 h-5 rounded-full bg-sky-500 flex items-center justify-center text-black text-xs">✓</span>
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+              <Link href="/about">
+                <motion.button
+                  whileHover={{ x: 5 }}
+                  className="text-sky-400 font-semibold border-b border-sky-400 pb-0.5 hover:text-white hover:border-white transition-all"
+                >
+                  Learn More About Us
+                </motion.button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </main>
   );
 }
