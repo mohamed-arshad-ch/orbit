@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Link from "next/link";
-import { jobs } from "@/data/jobs";
+import { jobs, countries } from "@/data/jobs";
 import { tours } from "@/data/tours";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -23,43 +23,48 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Foreign Vacancies</h2>
               <p className="text-slate-400">Discover premium opportunities across the globe.</p>
             </div>
-            <button className="hidden md:block text-sky-400 font-semibold hover:text-sky-300 transition-colors">View All Jobs →</button>
+            <Link href="/jobs" className="hidden md:block text-sky-400 font-semibold hover:text-sky-300 transition-colors">View All Vacancies →</Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {jobs.map((job, index) => (
-              <Link href={`/jobs/${job.id}`} key={job.id} className="block group">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {countries.map((country, index) => (
+              <Link href={`/jobs/country/${country.id}`} key={country.id} className="block group">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                  className="h-full p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-sky-500/50 hover:bg-white/10 transition-colors cursor-pointer backdrop-blur-sm relative overflow-hidden"
+                  className="h-full rounded-2xl bg-white/5 border border-white/5 hover:border-sky-500/50 hover:bg-white/10 transition-all cursor-pointer backdrop-blur-sm relative overflow-hidden group"
                 >
-                  <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="text-sky-400 text-xl">↗</span>
-                  </div>
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-sky-500/20 flex items-center justify-center text-2xl border border-sky-500/30 shadow-lg shadow-sky-500/10">
-                      {job.countryFlag}
+                  <div className="h-40 relative overflow-hidden bg-gradient-to-br from-slate-800 to-slate-950">
+                    <Image
+                      src={country.image}
+                      alt={country.name}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-80"
+                      onError={(e) => {
+                        // Fallback handling if needed, though Next.js Image is tricky with onError
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    <div className="absolute top-3 left-3 w-10 h-10 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center text-2xl border border-white/10">
+                      {country.flag}
                     </div>
-                    <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-300 border border-white/10 group-hover:border-sky-500/30 transition-colors">
-                      {job.type}
-                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">{job.title}</h3>
-                  <p className="text-slate-400 text-sm mb-6">{job.company} • {job.location}</p>
-                  <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto">
-                    <span className="text-sky-400 font-bold">{job.salary}<span className="text-slate-500 text-sm font-normal">/mo</span></span>
-                    <span className="text-sm font-semibold text-white group-hover:translate-x-1 transition-transform">Details →</span>
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-sky-400 transition-colors">{country.name}</h3>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-400 text-sm">{country.vacancyCount} Vacancies</span>
+                      <span className="text-sky-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Explore →</span>
+                    </div>
                   </div>
                 </motion.div>
               </Link>
             ))}
           </div>
           <div className="mt-8 text-center md:hidden">
-            <button className="text-sky-400 font-semibold hover:text-sky-300 transition-colors">View All Jobs →</button>
+            <Link href="/jobs" className="text-sky-400 font-semibold hover:text-sky-300 transition-colors">View All Vacancies →</Link>
           </div>
         </div>
       </section>
