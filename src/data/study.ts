@@ -8,6 +8,9 @@ export interface StudyCountry {
     programs?: string[];
     features?: string[];
     additionalInfo?: string[];
+    description?: string;
+    eligibility?: string[];
+    fees?: string[];
 }
 
 export const studyCountries: StudyCountry[] = [
@@ -68,6 +71,40 @@ export const studyCountries: StudyCountry[] = [
             "Diploma Programs (Duration: 1 year)",
             "Eligibility: 12th marks 55%",
             "DIPLOMA IN HEALTH AND SOCIAL CARE MANAGEMENT"
+        ]
+    },
+    {
+        id: "slovakia",
+        name: "Slovakia",
+        flag: "🇸🇰",
+        image: "/countries/slovakia.jpg",
+        title: "Study in Slovakia",
+        description: "Slovakia’s leading public universities, offering foundation (preparatory) programs designed to prepare international students for Bachelor’s degree studies in Slovakia.",
+        highlights: [
+            "No IELTS required",
+            "Offer letter issued within 3–4 working days"
+        ],
+        programs: [
+            "Business",
+            "Information Technology (IT)",
+            "Finance",
+            "Economics",
+            "Social Management",
+            "Social Sciences",
+            "Science",
+            "Mathematics"
+        ],
+        eligibility: [
+            "+2 ( 50% Mandatory )",
+            "Age Limit - Upto 25",
+            "Minimum 50% marks required"
+        ],
+        fees: [
+            "Application Fee: €200",
+            "Tuition Fee: €6,500"
+        ],
+        additionalInfo: [
+            "*Contact Only for Study Visa"
         ]
     }
 ];

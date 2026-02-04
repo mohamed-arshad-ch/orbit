@@ -49,7 +49,7 @@ export default async function StudyDetailPage({ params }: PageProps) {
                         {country.title}
                     </h1>
                     <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                        Start your professional journey in {country.name} with our expert guidance and guaranteed support.
+                        {country.description || `Start your professional journey in ${country.name} with our expert guidance and guaranteed support.`}
                     </p>
                 </div>
             </div>
@@ -82,6 +82,44 @@ export default async function StudyDetailPage({ params }: PageProps) {
                             </section>
                         )}
 
+                        {/* Eligibility Section */}
+                        {country.eligibility && (
+                            <section className="space-y-6">
+                                <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                                    <span className="w-1.5 h-8 bg-sky-500 rounded-full" />
+                                    Eligibility Criteria
+                                </h2>
+                                <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+                                    <ul className="space-y-4">
+                                        {country.eligibility.map((item, i) => (
+                                            <li key={i} className="flex items-center gap-3 text-slate-300">
+                                                <span className="w-2 h-2 rounded-full bg-sky-500" />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </section>
+                        )}
+
+                        {/* Fees Section */}
+                        {country.fees && (
+                            <section className="space-y-6">
+                                <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                                    <span className="w-1.5 h-8 bg-sky-500 rounded-full" />
+                                    Fee Structure
+                                </h2>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    {country.fees.map((fee, i) => (
+                                        <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 flex items-center justify-between">
+                                            <span className="text-slate-400 text-sm uppercase tracking-wider">{fee.split(':')[0]}</span>
+                                            <span className="text-sky-400 font-bold text-xl">{fee.split(':')[1]}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+
                         {/* Highlights Section */}
                         <section className="space-y-8">
                             <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
@@ -97,6 +135,15 @@ export default async function StudyDetailPage({ params }: PageProps) {
                                 ))}
                             </div>
                         </section>
+
+                        {/* Additional Info */}
+                        {country.additionalInfo && (
+                            <section className="bg-sky-500/10 border border-sky-500/20 rounded-2xl p-6">
+                                {country.additionalInfo.map((info, i) => (
+                                    <p key={i} className="text-sky-400 font-medium text-center">{info}</p>
+                                ))}
+                            </section>
+                        )}
                     </div>
 
                     {/* Right Column: Sidebar / CTA */}
