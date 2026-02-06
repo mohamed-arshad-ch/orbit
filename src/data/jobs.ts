@@ -33,6 +33,7 @@ export const countries: Country[] = [
     { id: "germany", name: "Germany", flag: "🇩🇪", image: "/countries/germany.jpg", vacancyCount: 14 },
     { id: "greece", name: "Greece", flag: "🇬🇷", image: "/countries/greece.jpg", vacancyCount: 3 },
     { id: "albania", name: "Albania", flag: "🇦🇱", image: "/countries/albania.jpg", vacancyCount: 5 },
+    { id: "russia", name: "Russia", flag: "🇷🇺", image: "/countries/russia.jpg", vacancyCount: 1 },
 ];
 
 export const jobs: Job[] = [
@@ -311,6 +312,35 @@ export const jobs: Job[] = [
             "Processing Time: 5 – 7 Months",
             "Service Cost applies (Without Ticket)",
             "Step-by-step payment terms"
+        ]
+    },
+    {
+        id: "17",
+        title: "Warehouse Helper",
+        company: "Logistics Partner Russia",
+        location: "Russia",
+        salary: "₹60,000 – ₹70,000",
+        type: "Full Time",
+        postedDate: "2026-02-06",
+        referenceCode: "RUS-WH-2026",
+        countryFlag: "🇷🇺",
+        description: "Urgent opening for Warehouse Helpers in Russia with Employment Visa. Payment after visa! We are looking for male candidates with good physical fitness for warehouse operations.",
+        requirements: [
+            "Gender: Male Candidates Only",
+            "Age Limit: Up to 45 Years",
+            "Good Physical Fitness Required",
+            "Duty Hours: 10–11 Hours per Day",
+            "Working Days: 6 Days per Week",
+            "Overtime Available"
+        ],
+        benefits: [
+            "Payment After Visa ✅",
+            "Salary: ₹60,000 – ₹70,000 per Month",
+            "Accommodation Provided",
+            "Duty Meals Provided",
+            "Processing Time: 45–60 Working Days",
+            "Service Cost: ₹4.5 Lakhs (Including Air Ticket ✈️)",
+            "Note: Insurance & Medical Expenses to be borne by the Candidate"
         ]
     }
 ];
