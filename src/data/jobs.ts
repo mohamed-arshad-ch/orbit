@@ -259,6 +259,59 @@ export const jobs: Job[] = [
             "Job assistance within one month of arrival",
             "Premium opportunity in Europe"
         ]
+    },
+
+
+    {
+        id: "15",
+        title: "Restaurant Service Person",
+        company: "Hotel / Restaurant Germany",
+        location: "Germany",
+        salary: "€1,200 Net",
+        type: "Full Time",
+        postedDate: "2026-02-06",
+        referenceCode: "GER-RSP-2026",
+        countryFlag: "🇩🇪",
+        description: "Leading vacancies in Germany for Restaurant Service Persons. We are looking for experienced candidates with a Hotel Management Degree. Initial payment required for VFS Slot Booking and Travel Insurance, with balance payable after visa.",
+        requirements: [
+            "Qualification: Hotel Management Degree holders only",
+            "Age Limit: Up to 40 years",
+            "Experience: Restaurant service experience required"
+        ],
+        benefits: [
+            "Salary: €1,200 Net",
+            "Accommodation & Food provided",
+            "Service Cost: ₹13 Lakhs (Without Ticket and Embassy Fee)",
+            "Processing Time: Approximately 4 months",
+            "Vacancies: 5"
+        ]
+    },
+    {
+        id: "16",
+        title: "Forklift Operator",
+        company: "Car Manufacturing Unit / Warehouse",
+        location: "Slovakia",
+        salary: "€800 – €1,000",
+        type: "Full Time",
+        postedDate: "2026-02-06",
+        referenceCode: "SVK-FLO-2026",
+        countryFlag: "🇸🇰",
+        description: "Job opportunity for Forklift Operators in a Car Manufacturing Unit / Warehouse in Slovakia. 4 Wheel Driving License is mandatory. Candidates must have no previous international travel history.",
+        requirements: [
+            "4 Wheel Driving License Mandatory",
+            "Europass CV with at least 2 years of forklift experience",
+            "Basic English communication skills",
+            "Minimum height: 165 cm",
+            "Willingness to learn and attend forklift training",
+            "Passport valid for a minimum of 2 years",
+            "Important: Must Not Have Any Previous International Travel History"
+        ],
+        benefits: [
+            "Monthly Salary: €800 – €1,000",
+            "Processing Time: 5 – 7 Months",
+            "Service Cost applies (Without Ticket)",
+            "Step-by-step payment terms"
+        ]
     }
 ];
 

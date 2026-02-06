@@ -43,10 +43,10 @@ export default function Hero() {
                         <span className="relative z-10 flex items-center justify-center gap-2">Find Abroad Jobs <span className="group-hover:translate-x-1 transition-transform">→</span></span>
                     </Link>
                     <Link
-                        href="#tours"
+                        href="#study"
                         className="w-full md:w-auto px-8 py-4 rounded-full border border-white/10 hover:border-sky-400/50 hover:text-sky-400 bg-white/5 backdrop-blur-sm transition-all text-white font-semibold transform hover:-translate-y-1"
                     >
-                        Explore Tour Packages
+                        Explore Study Abroad
                     </Link>
                 </div>
 
