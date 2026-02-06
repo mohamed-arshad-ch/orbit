@@ -25,7 +25,7 @@ export default async function JobDetailsPage({ params }: PageProps) {
     }
 
     const whatsappMessage = `Hi, I am interested in the ${job.title} position at ${job.company} (${job.referenceCode}). Please provide more details.`;
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/918714549679?text=${encodeURIComponent(whatsappMessage)}`;
 
     return (
         <>

@@ -14,7 +14,7 @@ export default function Footer() {
                         <h4 className="text-white font-bold mb-4">Quick Links</h4>
                         <ul className="space-y-2 text-slate-500">
                             <li><Link href="/#jobs" className="hover:text-sky-400 transition-colors">Abroad Jobs</Link></li>
-                            <li><Link href="/#tours" className="hover:text-sky-400 transition-colors">Tour Packages</Link></li>
+                            {/* <li><Link href="/#tours" className="hover:text-sky-400 transition-colors">Tour Packages</Link></li> */}
                             <li><Link href="/about" className="hover:text-sky-400 transition-colors">About Us</Link></li>
                             <li><Link href="/#contact" className="hover:text-sky-400 transition-colors">Contact</Link></li>
                         </ul>
@@ -22,9 +22,9 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-4">Contact</h4>
                         <ul className="space-y-2 text-slate-500">
-                            <li>info@orbitconsultancy.com</li>
-                            <li>+1 (555) 123-4567</li>
-                            <li>123 Business Avenue, City</li>
+                            <li>consultingorbita@gmail.com</li>
+                            <li>+91 8714549679</li>
+                            <li>near national driving school,kottakkal</li>
                         </ul>
                     </div>
                 </div>

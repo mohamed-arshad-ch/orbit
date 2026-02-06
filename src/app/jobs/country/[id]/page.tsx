@@ -84,7 +84,7 @@ export default async function CountryJobsPage({ params }: PageProps) {
                             <div className="text-6xl mb-6">🔍</div>
                             <h3 className="text-2xl font-bold text-white mb-2">No active vacancies right now</h3>
                             <p className="text-slate-400 max-w-md mx-auto">We are currently updating our job portal for {country.name}. Please check back soon or contact us via WhatsApp for inquiries.</p>
-                            <Link href="https://wa.me/1234567890" className="mt-8 inline-block bg-sky-500 hover:bg-sky-400 text-black font-bold py-3 px-8 rounded-xl transition-all">
+                            <Link href="https://wa.me/918714549679" className="mt-8 inline-block bg-sky-500 hover:bg-sky-400 text-black font-bold py-3 px-8 rounded-xl transition-all">
                                 Contact on WhatsApp
                             </Link>
                         </div>

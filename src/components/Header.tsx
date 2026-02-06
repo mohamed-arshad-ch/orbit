@@ -18,7 +18,7 @@ export default function Header() {
                 <nav className="hidden md:flex items-center space-x-8">
                     <Link href="/" className="text-sm font-medium hover:text-sky-400 transition-colors">Home</Link>
                     <Link href="#jobs" className="text-sm font-medium hover:text-sky-400 transition-colors">Abroad Jobs</Link>
-                    <Link href="#tours" className="text-sm font-medium hover:text-sky-400 transition-colors">Tour Packages</Link>
+                    {/* <Link href="#tours" className="text-sm font-medium hover:text-sky-400 transition-colors">Tour Packages</Link> */}
                     <Link href="#about" className="text-sm font-medium hover:text-sky-400 transition-colors">About Us</Link>
                 </nav>
 
@@ -49,7 +49,7 @@ export default function Header() {
                     <div className="flex flex-col p-6 space-y-4">
                         <Link href="/" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>Home</Link>
                         <Link href="#jobs" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>Abroad Jobs</Link>
-                        <Link href="#tours" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>Tour Packages</Link>
+                        {/* <Link href="#tours" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>Tour Packages</Link> */}
                         <Link href="#about" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>About Us</Link>
                         <Link href="#contact" className="text-sky-400 font-semibold" onClick={() => setIsOpen(false)}>Contact Us</Link>
                     </div>
