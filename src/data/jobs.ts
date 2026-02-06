@@ -342,6 +342,38 @@ export const jobs: Job[] = [
             "Service Cost: ₹4.5 Lakhs (Including Air Ticket ✈️)",
             "Note: Insurance & Medical Expenses to be borne by the Candidate"
         ]
+    },
+    {
+        id: "18",
+        title: "Construction & Technical Trades",
+        company: "Various Industries Albania",
+        location: "Albania",
+        salary: "€400 - €900",
+        type: "Full Time",
+        postedDate: "2026-02-06",
+        referenceCode: "ALB-MULTI-2026",
+        countryFlag: "🇦🇱",
+        description: "Massive recruitment drive for skilled workers in Albania. Multiple positions available across construction, automotive, and industrial sectors.",
+        requirements: [
+            "Experience in relevant field is mandatory",
+            "Technical certification preferred",
+            "Good physical condition",
+            "Willingness to relocate"
+        ],
+        benefits: [
+            "Dishwasher (M): €450-500",
+            "Plasting Specialist: €400-550",
+            "Turner (auto gearbox): €500-600",
+            "Assembler (metal): €650",
+            "Hydraulic Tech / Welder / Mechanic / Electrician: €500-600",
+            "Oil/Gas Technologist: €600-850",
+            "Metal Fitter / Welder: €600-700",
+            "Refrigeration Tech: €600-700",
+            "Cold Storage Tech: €800-900",
+            "Vehicle Electrician / Painter / Mechanic: €500-700",
+            "Aluminum Fabricator / Welder: €500",
+            "Overtime Available"
+        ]
     }
 ];
 
