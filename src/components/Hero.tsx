@@ -37,13 +37,13 @@ export default function Hero() {
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                     <Link
-                        href="#jobs"
+                        href="/foreign-jobs"
                         className="group w-full md:w-auto px-8 py-4 rounded-full bg-sky-500 hover:bg-sky-400 text-black font-bold transition-all shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:shadow-[0_0_30px_rgba(14,165,233,0.5)] transform hover:-translate-y-1 relative overflow-hidden"
                     >
                         <span className="relative z-10 flex items-center justify-center gap-2">Find Abroad Jobs <span className="group-hover:translate-x-1 transition-transform">→</span></span>
                     </Link>
                     <Link
-                        href="#study"
+                        href="/study-abroad"
                         className="w-full md:w-auto px-8 py-4 rounded-full border border-white/10 hover:border-sky-400/50 hover:text-sky-400 bg-white/5 backdrop-blur-sm transition-all text-white font-semibold transform hover:-translate-y-1"
                     >
                         Explore Study Abroad

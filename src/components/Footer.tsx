@@ -13,10 +13,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-4">Quick Links</h4>
                         <ul className="space-y-2 text-slate-500">
-                            <li><Link href="/#jobs" className="hover:text-sky-400 transition-colors">Abroad Jobs</Link></li>
-                            <li><Link href="/#study" className="hover:text-sky-400 transition-colors">Study Abroad</Link></li>
+                            <li><Link href="/foreign-jobs" className="hover:text-sky-400 transition-colors">Abroad Jobs</Link></li>
+                            <li><Link href="/study-abroad" className="hover:text-sky-400 transition-colors">Study Abroad</Link></li>
                             {/* <li><Link href="/#tours" className="hover:text-sky-400 transition-colors">Tour Packages</Link></li> */}
-                            <li><Link href="/about" className="hover:text-sky-400 transition-colors">About Us</Link></li>
+                            <li><Link href="/about-us" className="hover:text-sky-400 transition-colors">About Us</Link></li>
                             <li><Link href="/#contact" className="hover:text-sky-400 transition-colors">Contact</Link></li>
                         </ul>
                     </div>
