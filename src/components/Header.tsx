@@ -23,16 +23,6 @@ export default function Header() {
                     <Link href="/about-us" className="text-sm font-medium hover:text-sky-400 transition-colors">About Us</Link>
                 </nav>
 
-                {/* CTA Button */}
-                <div className="hidden md:block">
-                    <Link
-                        href="#contact"
-                        className="px-6 py-2.5 rounded-full bg-sky-500 hover:bg-sky-400 text-black font-semibold text-sm transition-all shadow-lg shadow-sky-500/20"
-                    >
-                        Contact Us
-                    </Link>
-                </div>
-
                 {/* Mobile Menu Button */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
@@ -53,7 +43,6 @@ export default function Header() {
                         <Link href="/study-abroad" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>Study Abroad</Link>
                         {/* <Link href="#tours" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>Tour Packages</Link> */}
                         <Link href="/about-us" className="text-lg hover:text-sky-400" onClick={() => setIsOpen(false)}>About Us</Link>
-                        <Link href="#contact" className="text-sky-400 font-semibold" onClick={() => setIsOpen(false)}>Contact Us</Link>
                     </div>
                 </div>
             )}

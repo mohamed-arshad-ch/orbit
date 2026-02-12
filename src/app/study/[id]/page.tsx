@@ -155,29 +155,17 @@ export default async function StudyDetailPage({ params }: PageProps) {
                                 <p className="mb-8 relative z-10 text-white/90 font-medium">
                                     Our counselors are ready to help you with the admission process and visa assistance.
                                 </p>
-                                <Link
-                                    href={`/contact?subject=Application for Study in ${country.name}`}
-                                    className="block text-center py-4 rounded-2xl bg-black text-white font-bold hover:bg-slate-900 transition-all shadow-lg relative z-10"
+                                <a
+                                    href={`https://wa.me/918714549679?text=${encodeURIComponent(`Hi, I am interested in studying in ${country.name}. Please provide more details.`)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block text-center py-4 rounded-2xl bg-[#25D366] hover:bg-[#20b857] text-white font-bold transition-all shadow-lg relative z-10 border border-white/20"
                                 >
-                                    Apply for Admission
-                                </Link>
+                                    Apply via WhatsApp
+                                </a>
                                 <p className="mt-4 text-center text-xs font-bold uppercase tracking-widest text-black/60 relative z-10">
                                     Limited Seats Available
                                 </p>
-                            </div>
-
-                            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                                <h4 className="text-white font-bold mb-6">Need Immediate Assistance?</h4>
-                                <div className="space-y-4">
-                                    <Link href="tel:+1234567890" className="flex items-center gap-4 text-slate-400 hover:text-sky-400 transition-colors">
-                                        <span className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">📞</span>
-                                        <span>Call Our Expert</span>
-                                    </Link>
-                                    <Link href="https://wa.me/1234567890" className="flex items-center gap-4 text-slate-400 hover:text-sky-400 transition-colors">
-                                        <span className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center">📱</span>
-                                        <span>WhatsApp Us</span>
-                                    </Link>
-                                </div>
                             </div>
                         </div>
                     </div>
