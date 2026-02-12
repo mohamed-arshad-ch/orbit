@@ -10,8 +10,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Orbit Consultancy | Abroad Jobs & Tour Packages",
-  description: "Premier consultancy for abroad job vacancies and exclusive tour packages.",
+  title: "Orbita Consultancy | Abroad Jobs & Abroad Study",
+  description: "Premier consultancy for abroad job vacancies and exclusive abroad study",
 };
 
 export default function RootLayout({
